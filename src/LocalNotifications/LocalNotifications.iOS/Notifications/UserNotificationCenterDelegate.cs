@@ -1,4 +1,5 @@
-﻿using UserNotifications;
+﻿using System;
+using UserNotifications;
 
 namespace LocalNotifications.iOS.Notifications
 {
@@ -6,6 +7,12 @@ namespace LocalNotifications.iOS.Notifications
     {
         public UserNotificationCenterDelegate()
         {
+        }
+
+        public override void DidReceiveNotificationResponse(UNUserNotificationCenter center, UNNotificationResponse response,
+            Action completionHandler)
+        {
+            Console.WriteLine("The user tapped the notification");
         }
     }
 }
